@@ -19,6 +19,6 @@ class RoutesController < ApplicationController
 
   def update
     RouteUpdater.new(params: request.parameters).perform
-    head :no_content
+    render json: { status: 'ok' }
   end
 end
