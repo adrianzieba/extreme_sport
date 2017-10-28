@@ -3,7 +3,7 @@ class UploadsController < ApplicationController
 
   def create
     RouteCreator.new(file.path).perform
-    render json: { file_path: file.path }
+    render nothing: true
   end
 
   private
