@@ -11,4 +11,13 @@ class RoutesController < ApplicationController
   def create
 
   end
+
+  def update
+    Route.find(params['id']).update_attributes(
+      prosthesis: params['prosthesis'],
+      crutches: params['crutches'],
+      wheelchair_tetraplegia: params['wheelchairTetraplegia'],
+      wheelchair_paraplegia: params['wheelchairParaplegia']
+    )
+  end
 end
