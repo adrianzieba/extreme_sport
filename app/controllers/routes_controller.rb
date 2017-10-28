@@ -18,7 +18,7 @@ class RoutesController < ApplicationController
   end
 
   def update
-    RouteUpdater.new(request.parameters).perform
+    RouteUpdater.new(params: request.parameters).perform
     head :no_content
   end
 end

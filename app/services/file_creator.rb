@@ -1,5 +1,5 @@
 class FileCreator
-  def initialize(params: params)
+  def initialize(params:)
     @params = params
   end
 
