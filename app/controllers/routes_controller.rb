@@ -1,7 +1,7 @@
 class RoutesController < ApplicationController
 
   def index
-    render json: {}
+    render json: Route.all.map(&:attributes)
   end
 
   def show
