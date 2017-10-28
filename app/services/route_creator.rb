@@ -5,7 +5,7 @@ class RouteCreator
 
   def perform
     route = Route.create(
-      author: metadata.fetch('author').fetch('name'),
+      author: metadata.fetch('author', {}).fetch('name', nil),
       name: trk.fetch('name')
     )
 
