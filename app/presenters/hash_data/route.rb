@@ -1,6 +1,6 @@
 module HashData
   class Route
-    def initialize(route: route)
+    def initialize(route_id: route_id)
       @route = route
     end
 
@@ -11,6 +11,10 @@ module HashData
     end
 
     private
-    attr_reader :route
+    attr_reader :route_id
+
+    def route
+      Route.find(route_id)
+    end
   end
 end

@@ -5,7 +5,7 @@ class RoutesController < ApplicationController
   end
 
   def show
-    
+    render json: ::HashData::Route.new(route: params[:route_id]).perform
   end
 
   def create
