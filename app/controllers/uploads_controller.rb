@@ -3,7 +3,7 @@ class UploadsController < ApplicationController
 
   def create
     RouteCreator.new(file.path).perform
-    render nothing: true
+    head :no_content
   end
 
   private

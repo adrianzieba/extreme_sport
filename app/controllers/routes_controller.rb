@@ -1,5 +1,4 @@
 class RoutesController < ApplicationController
-
   def index
     render json: Route.all.map(&:attributes)
   end
@@ -16,15 +15,10 @@ class RoutesController < ApplicationController
   end
 
   def create
-
   end
 
   def update
-    Route.find(request.parameters['id']).update_attributes(
-      prosthesis: request.parameters['prosthesis'],
-      crutches: request.parameters['crutches'],
-      wheelchair_tetraplegia: request.parameters['wheelchairTetraplegia'],
-      wheelchair_paraplegia: request.parameters['wheelchairParaplegia']
-    )
+    RouteUpdater.new(request.parameters).perform
+    head :no_content
   end
 end
