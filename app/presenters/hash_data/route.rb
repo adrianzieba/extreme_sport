@@ -14,7 +14,7 @@ module HashData
     attr_reader :route_id
 
     def route_attributes
-      route.attributes.slice("name", "author", "prosthesis", "crutches", "wheelchair_tetraplegia", "wheelchair_paraplegia")
+      route.attributes.slice("name", "author", "prosthesis", "crutches", "wheelchair_tetraplegia", "wheelchair_paraplegia", "difficult_level")
     end
 
     def route

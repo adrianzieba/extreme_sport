@@ -12,6 +12,7 @@ class RouteCreator
     trk["trkseg"]["trkpt"].each_with_index do |point, index|
       RoutePoint.create(lat: point["lat"], lon: point["lon"], order: index, route_id: route.id)
     end
+    route
   end
 
   private
