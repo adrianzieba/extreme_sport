@@ -6,7 +6,8 @@ class RouteCreator
   def perform
     route = Route.create(
       author: metadata.fetch('author', {}).fetch('name', nil),
-      name: trk.fetch('name')
+      name: trk.fetch('name'),
+      filename: file_name
     )
 
     trk["trkseg"]["trkpt"].each_with_index do |point, index|

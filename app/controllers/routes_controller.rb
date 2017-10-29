@@ -23,4 +23,14 @@ class RoutesController < ApplicationController
     RouteUpdater.new(params: request.parameters).perform
     render json: { status: 'ok' }
   end
+
+  def export
+    send_data File.open(Rails.root.join(filename)).read, filename: filename
+  end
+
+  private
+
+  def filename
+    Route.find(request.parameters['id']).filename
+  end
 end
