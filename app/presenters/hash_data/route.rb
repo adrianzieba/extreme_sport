@@ -6,7 +6,7 @@ module HashData
 
     def perform
       route_attributes.merge(
-        points: route.route_points.map(&:attributes)
+        points: route.route_points.order(:order).map(&:attributes)
       )
     end
 
