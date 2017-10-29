@@ -29,7 +29,7 @@ class RoutesController < ApplicationController
   end
 
   def extreme_points
-    ::MarkExtremePoints.new(request.parameters['extreme_points']).perform
+    ::MarkExtremePoints.new(JSON.parse(request.body.read)["points"]).perform
   end
 
   private
