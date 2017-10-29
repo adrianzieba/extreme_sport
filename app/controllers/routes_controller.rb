@@ -1,4 +1,6 @@
 class RoutesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  
   def index
     render json: Route.all.map(&:attributes)
   end

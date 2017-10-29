@@ -21,6 +21,6 @@ class RouteUpdater
   end
 
   def route
-    @route ||= Route.find(params['id']).
+    @route ||= Route.find(params['id'])
   end
 end
