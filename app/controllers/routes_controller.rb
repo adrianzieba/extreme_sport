@@ -2,7 +2,7 @@ class RoutesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    render json: Route.all.map(&:attributes)
+    render json: Route.all.sort_by { |route| route.created_at }.map(&:attributes)
   end
 
   def show
