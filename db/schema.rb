@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171029023456) do
+ActiveRecord::Schema.define(version: 20171029041451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20171029023456) do
     t.string "lon"
     t.integer "order"
     t.bigint "route_id"
+    t.boolean "extreme"
     t.index ["route_id"], name: "index_route_points_on_route_id"
   end
 

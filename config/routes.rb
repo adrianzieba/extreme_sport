@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   put '/routes/:id', to: 'routes#update'
   get '/routes/filter', to: 'routes#filter'
   get '/routes/export/:id', to: 'routes#export'
+  put '/routes/mark_extreme_points', to: 'routes#extreme_points'
 
   resources :uploads, only: [:create]
 end

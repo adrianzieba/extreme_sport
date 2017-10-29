@@ -28,6 +28,10 @@ class RoutesController < ApplicationController
     send_data File.open(Rails.root.join(filename)).read, filename: filename
   end
 
+  def extreme_points
+    ::MarkExtremePoints.new(request.parameters['extreme_points']).perform
+  end
+
   private
 
   def filename
