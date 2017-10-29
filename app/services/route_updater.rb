@@ -14,9 +14,9 @@ class RouteUpdater
     {
       prosthesis: params['prosthesis'],
       crutches: params['crutches'],
-      wheelchair_tetraplegia: params['wheelchairTetraplegia'],
-      wheelchair_paraplegia: params['wheelchairParaplegia'],
-      difficult_level: params['difficultLevel']
+      wheelchair_tetraplegia: params['wheelchair_tetraplegia'],
+      wheelchair_paraplegia: params['wheelchair_paraplegia'],
+      difficult_level: params['difficult_level']
     }
   end
 

@@ -1,6 +1,6 @@
 class RoutesController < ApplicationController
   skip_before_action :verify_authenticity_token
-  
+
   def index
     render json: Route.all.map(&:attributes)
   end
@@ -11,7 +11,7 @@ class RoutesController < ApplicationController
 
   def filter
     filter_params = request.parameters.slice(
-      'prosthesis', 'crutches', 'wheelchairTetraplegia', 'wheelchairParaplegia'
+      'prosthesis', 'crutches', 'wheelchair_tetraplegia', 'wheelchair_paraplegia'
     ).select { |_, v| v }
     render json: ::Route.where(filter_params).map(&:attributes)
   end
