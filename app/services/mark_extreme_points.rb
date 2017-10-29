@@ -5,7 +5,9 @@ class MarkExtremePoints
 
   def perform
     points.each do |point|
-      RoutePoint.where(lat: point['lat'], lon: point['lon']).update_attributes(extreme: true)
+      RoutePoint.within(0.01, :origin => [point['lat'],point['lon']]).each do |rp|
+        rp.update_attributes(extreme: true)
+      end
     end
   end
 

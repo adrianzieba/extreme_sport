@@ -16,6 +16,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'rack-cors'
 gem 'gpx'
+gem 'geokit-rails'
 
 group :development, :test do
   gem 'pry-byebug'

@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171029041451) do
+ActiveRecord::Schema.define(version: 20171029042844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "route_points", force: :cascade do |t|
-    t.string "lat"
-    t.string "lon"
+    t.decimal "lat"
+    t.decimal "lon"
     t.integer "order"
     t.bigint "route_id"
     t.boolean "extreme"
